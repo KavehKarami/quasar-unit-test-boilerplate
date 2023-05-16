@@ -29,9 +29,10 @@
   "devDependencies": {
     "@babel/core": "^7.21.8",
     "@babel/eslint-parser": "^7.13.14",
+    "@babel/preset-env": "^7.21.5",
     "@quasar/app-webpack": "^3.0.0",
     "@quasar/quasar-app-extension-testing": "^2.1.0",
-    "@quasar/quasar-app-extension-testing-unit-jest": "^2.2.3",
+    "@quasar/quasar-app-extension-testing-unit-jest": "^3.0.0-beta.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/user-event": "^14.4.3",
     "@testing-library/vue": "^7.0.0",

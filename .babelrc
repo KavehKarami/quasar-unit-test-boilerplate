@@ -1,0 +1,18 @@
+{
+  "env": {
+    "test": {
+      "presets": [
+        "@vue/cli-plugin-babel/preset",
+        "@quasar/babel-preset-app",
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ]
+      ]
+    }
+  }
+}

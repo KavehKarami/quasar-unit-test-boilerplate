@@ -16,4 +16,8 @@ module.exports = {
     "^@/(.*)$": "<rootDir>/src/$1",
     "^~/(.*)$": "<rootDir>/src/$1",
   },
+  testMatch: [
+    "<rootDir>/test/jest/__tests__/**/*.(spec|test).+(ts|js)?(x)",
+    "<rootDir>/src/**/*?(.jest).(spec|test).+(ts|js)?(x)",
+  ],
 };
