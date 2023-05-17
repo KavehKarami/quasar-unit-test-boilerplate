@@ -1,13 +1,7 @@
 import { render, screen } from "@testing-library/vue";
-import Router from "@/router";
-import Store from "@/stores";
 import { QLayout, QPageContainer } from "quasar";
-
-const router = Router();
-const store = Store();
-
-import HomePage from "@/pages/IndexPage.vue";
 import userEvent from "@testing-library/user-event";
+import HomePage from "@/pages/IndexPage.vue";
 
 describe("HomePage", () => {
   const setup = async () => {
@@ -21,17 +15,13 @@ describe("HomePage", () => {
     };
     render(App, {
       global: {
-        plugins: [router, store],
+        plugins: [global.router, global.store],
       },
     });
-    await router.isReady();
+    await global.router.isReady();
   };
 
   describe("Interactions", () => {
-    it("displays counter with initial value when page rendered", async () => {
-      await setup();
-      expect(screen.queryByTestId("counter").textContent).toBe("0");
-    });
     it("increment counter when click on button", async () => {
       await setup();
 
@@ -40,6 +30,11 @@ describe("HomePage", () => {
       await userEvent.click(button);
 
       expect(screen.queryByTestId("counter").textContent).toBe("1");
+    });
+
+    it("displays counter with initial value when page rendered", async () => {
+      await setup();
+      expect(screen.queryByTestId("counter").textContent).toBe("0");
     });
   });
 });
